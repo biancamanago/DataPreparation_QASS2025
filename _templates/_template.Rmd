@@ -1,0 +1,67 @@
+---
+title:    "Data Cleaning Sage Book"
+subtitle: "Template Rmd"
+author:   "Bianca Manago"
+date:    '`r paste("Created: 2024/10/18. Updated:", format(Sys.Date(), "%Y/%m/%d"))`'
+output:
+  html_document: 
+    toc: yes
+    number_sections: yes
+    toc_depth: 5
+editor_options:
+  chunk_output_type: console
+---
+
+# Header 1
+## Header 2
+### Header 3
+
+regular text
+
+# Get Setup
+## Clear everything & set width
+```{r echo=TRUE, results='hide', message=FALSE}
+    options(width=80) #Set width
+    cat("\014")       #Clear Console
+```
+
+## Load Libraries
+```{r echo=TRUE, results='hide', warning=FALSE, message=FALSE}
+  library(knitr)      #allows rmarkdown files
+  library(haven)      #helps import stata
+  library(questionr)  #allows lookfor function
+  library(tidyverse)  #plotting/cleaning, etc.
+  library(broom)      #nice statistical output
+  library(here)       #nice file paths
+  library(expss)      #labeling variables/values
+```
+
+## Get the Working Directory
+two ways
+```{r echo=TRUE, results='hide'}
+  getwd()
+  here()
+```
+
+## Set seed & Start Log
+Remember to set your seed
+```{r}
+     set.seed(20200910)    #Set seed
+```
+
+## Load Data
+Remember to immediately rename and remove. Avoid overwriting old data.
+```{r}
+      load(file = "./filenamehere.RData") 
+```
+
+
+
+# Closing out
+  In this step, go ahead and close out of the file and quit R without saving  
+  the work space.
+```{r}
+   
+```
+
+
